@@ -1,0 +1,550 @@
+{
+  "profiles": [
+    {
+      "id": "prof_01",
+      "name": "Maya Lin",
+      "age": 22,
+      "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+      "bio": "Architecture student obsessed with brutalist buildings and matcha lattes. Catch me sketching at local coffee shops.",
+      "cityOrCollege": "UC Berkeley",
+      "interests": [
+        "Architecture",
+        "Film Photography",
+        "Matcha",
+        "Indie Rock"
+      ],
+      "occupation": "Architecture Undergrad",
+      "distanceMiles": 3,
+      "hasLikedUser": true
+    },
+    {
+      "id": "prof_02",
+      "name": "Rohan Mehta",
+      "age": 24,
+      "photo": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80",
+      "bio": "Founding an AI health startup. Always down for late night bouldering or debating the best pizza in town.",
+      "cityOrCollege": "Stanford University",
+      "interests": [
+        "Bouldering",
+        "Startups",
+        "Podcasts",
+        "House Music"
+      ],
+      "occupation": "Tech Founder",
+      "distanceMiles": 5,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_03",
+      "name": "Aria Chen",
+      "age": 21,
+      "photo": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+      "bio": "Psychology major & amateur DJ. If you can beat me at Mario Kart, first round of boba is on me.",
+      "cityOrCollege": "NYU Stern",
+      "interests": [
+        "Electronic Music",
+        "Psychology",
+        "Boba",
+        "Thrifting"
+      ],
+      "occupation": "Student & Part-time DJ",
+      "distanceMiles": 2,
+      "hasLikedUser": true
+    },
+    {
+      "id": "prof_04",
+      "name": "Lucas Silva",
+      "age": 23,
+      "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+      "bio": "Brazilian born, SF raised. Trying to hike every national park before 30. Current count: 14/63.",
+      "cityOrCollege": "San Francisco, CA",
+      "interests": [
+        "Hiking",
+        "Camping",
+        "Capoeira",
+        "Specialty Coffee"
+      ],
+      "occupation": "UX Designer",
+      "distanceMiles": 7,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_05",
+      "name": "Zara Patel",
+      "age": 22,
+      "photo": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+      "bio": "English lit & creative writing. Will read your birth chart if you buy me a flat white.",
+      "cityOrCollege": "Columbia University",
+      "interests": [
+        "Poetry",
+        "Astrology",
+        "Thrifting",
+        "Bookstores"
+      ],
+      "occupation": "Editorial Intern",
+      "distanceMiles": 4,
+      "hasLikedUser": true
+    },
+    {
+      "id": "prof_06",
+      "name": "Ethan Wright",
+      "age": 25,
+      "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
+      "bio": "Product manager who still thinks he can make it in the indie pop music scene. Dog dad to a golden retriever named Ziggy.",
+      "cityOrCollege": "Austin, TX",
+      "interests": [
+        "Acoustic Guitar",
+        "Golden Retrievers",
+        "Trail Running",
+        "Cooking"
+      ],
+      "occupation": "Product Manager",
+      "distanceMiles": 6,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_07",
+      "name": "Chloe Dupont",
+      "age": 23,
+      "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80",
+      "bio": "French expat living in NYC. Passionate about culinary arts, vintage vinyl, and spontaneous road trips.",
+      "cityOrCollege": "New York, NY",
+      "interests": [
+        "French Cuisine",
+        "Vinyl Records",
+        "Art Galleries",
+        "Wine Tasting"
+      ],
+      "occupation": "Pastry Chef",
+      "distanceMiles": 1,
+      "hasLikedUser": true
+    },
+    {
+      "id": "prof_08",
+      "name": "Marcus Johnson",
+      "age": 24,
+      "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80",
+      "bio": "Former college sprinter turned software engineer. Looking for someone to explore hidden food spots with.",
+      "cityOrCollege": "Georgia Tech",
+      "interests": [
+        "Track & Field",
+        "Street Tacos",
+        "Cybersecurity",
+        "Anime"
+      ],
+      "occupation": "Software Engineer",
+      "distanceMiles": 8,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_09",
+      "name": "Sophia Rodriguez",
+      "age": 21,
+      "photo": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80",
+      "bio": "Pre-med student surviving on iced americanos and adrenaline. Big fan of sunset runs and live jazz.",
+      "cityOrCollege": "UCLA",
+      "interests": [
+        "Medicine",
+        "Sunset Running",
+        "Jazz",
+        "Beach Volleyball"
+      ],
+      "occupation": "Bio-med Major",
+      "distanceMiles": 3,
+      "hasLikedUser": true
+    },
+    {
+      "id": "prof_10",
+      "name": "Devin Kumar",
+      "age": 26,
+      "photo": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&q=80",
+      "bio": "Data scientist by day, amateur standup comic by night. I promise I'm funnier in person than on an algorithm.",
+      "cityOrCollege": "Chicago, IL",
+      "interests": [
+        "Stand-up Comedy",
+        "Deep Dish Pizza",
+        "Chess",
+        "Machine Learning"
+      ],
+      "occupation": "Data Scientist",
+      "distanceMiles": 9,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_11",
+      "name": "Emma Watson-Lee",
+      "age": 22,
+      "photo": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=800&q=80",
+      "bio": "Environmental science enthusiast. Let's do a sunrise ocean swim or hunt for thrifted treasures.",
+      "cityOrCollege": "UC San Diego",
+      "interests": [
+        "Surfing",
+        "Sustainability",
+        "Pottery",
+        "Farmers Markets"
+      ],
+      "occupation": "Marine Biology Researcher",
+      "distanceMiles": 4,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_12",
+      "name": "Kabir Sharma",
+      "age": 23,
+      "photo": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80",
+      "bio": "Mechanical engineering graduate. Building electric karts on weekends. Tell me your top 3 movies.",
+      "cityOrCollege": "BITS Pilani",
+      "interests": [
+        "Formula 1",
+        "Robotics",
+        "Cinema",
+        "Gourmet Burgers"
+      ],
+      "occupation": "Hardware Engineer",
+      "distanceMiles": 11,
+      "hasLikedUser": true
+    },
+    {
+      "id": "prof_13",
+      "name": "Nia Robinson",
+      "age": 24,
+      "photo": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80",
+      "bio": "Fashion designer & visual storyteller. Life's too short for boring outfits and lukewarm conversations.",
+      "cityOrCollege": "Parsons School of Design",
+      "interests": [
+        "Fashion Design",
+        "Contemporary Art",
+        "Pilates",
+        "Museum Hops"
+      ],
+      "occupation": "Apparel Designer",
+      "distanceMiles": 2,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_14",
+      "name": "Alex Vance",
+      "age": 25,
+      "photo": "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=800&q=80",
+      "bio": "Urban farmer and fermentation nerd. I make my own sourdough and hot sauce. Looking for taste testers.",
+      "cityOrCollege": "Portland, OR",
+      "interests": [
+        "Sourdough",
+        "Gardening",
+        "Cycling",
+        "Indie Folk"
+      ],
+      "occupation": "Urban Botanist",
+      "distanceMiles": 15,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_15",
+      "name": "Tara O'Connor",
+      "age": 22,
+      "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
+      "bio": "Law student with a soft spot for golden hour photography and acoustic cafe jams.",
+      "cityOrCollege": "Harvard University",
+      "interests": [
+        "Debate",
+        "Golden Hour",
+        "Tennis",
+        "Coffee"
+      ],
+      "occupation": "Law Student",
+      "distanceMiles": 6,
+      "hasLikedUser": true
+    },
+    {
+      "id": "prof_16",
+      "name": "Liam Gallagher",
+      "age": 26,
+      "photo": "https://images.unsplash.com/photo-1492446845049-9c50ce313d00?auto=format&fit=crop&w=800&q=80",
+      "bio": "Sound engineer and vinyl collector. Spend my weekends scouring record fairs and brewing pour-overs.",
+      "cityOrCollege": "Seattle, WA",
+      "interests": [
+        "Vinyl",
+        "Audio Engineering",
+        "Pour-over Coffee",
+        "Rainy Days"
+      ],
+      "occupation": "Audio Engineer",
+      "distanceMiles": 12,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_17",
+      "name": "Ananya Rao",
+      "age": 21,
+      "photo": "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=800&q=80",
+      "bio": "Classical dancer meets tech geek. When I'm not debugging React apps, I'm rehearsing Bharatanatyam.",
+      "cityOrCollege": "IIT Delhi",
+      "interests": [
+        "Classical Dance",
+        "Full Stack Dev",
+        "Board Games",
+        "Chai"
+      ],
+      "occupation": "CS Major",
+      "distanceMiles": 5,
+      "hasLikedUser": true
+    },
+    {
+      "id": "prof_18",
+      "name": "Noah Miller",
+      "age": 23,
+      "photo": "https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&w=800&q=80",
+      "bio": "Ski instructor in winter, whitewater guide in summer. Looking for an adventure partner who doesn't mind early mornings.",
+      "cityOrCollege": "Denver, CO",
+      "interests": [
+        "Skiing",
+        "Rafting",
+        "Rock Climbing",
+        "Campfires"
+      ],
+      "occupation": "Outdoor Guide",
+      "distanceMiles": 18,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_19",
+      "name": "Camila Gomez",
+      "age": 24,
+      "photo": "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=800&q=80",
+      "bio": "Visual artist and botanical illustrator. Let's wander through modern art museums and critique the placards.",
+      "cityOrCollege": "Miami, FL",
+      "interests": [
+        "Painting",
+        "Salsa Dancing",
+        "Plant Parenthood",
+        "Gelato"
+      ],
+      "occupation": "Illustrator",
+      "distanceMiles": 14,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_20",
+      "name": "Kenji Takahashi",
+      "age": 25,
+      "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80",
+      "bio": "Game developer and pixel artist. Huge fan of cozy games, authentic ramen, and synthwave.",
+      "cityOrCollege": "San Jose, CA",
+      "interests": [
+        "Game Dev",
+        "Ramen",
+        "Synthwave",
+        "Anime"
+      ],
+      "occupation": "Game Developer",
+      "distanceMiles": 8,
+      "hasLikedUser": true
+    },
+    {
+      "id": "prof_21",
+      "name": "Serena Morales",
+      "age": 23,
+      "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+      "bio": "Journalist covering culture and tech. Always carrying a moleskine notebook and too many opinions on cinema.",
+      "cityOrCollege": "Northwestern University",
+      "interests": [
+        "Journalism",
+        "Film Festivals",
+        "Espresso",
+        "Thrift Stores"
+      ],
+      "occupation": "Culture Writer",
+      "distanceMiles": 7,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_22",
+      "name": "Jordan Bell",
+      "age": 24,
+      "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
+      "bio": "Kite surfer and marine engineer. Life is better when your hair smells like salt water.",
+      "cityOrCollege": "San Diego, CA",
+      "interests": [
+        "Kitesurfing",
+        "Ocean Conservation",
+        "Craft Beer",
+        "Tacos"
+      ],
+      "occupation": "Marine Engineer",
+      "distanceMiles": 10,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_23",
+      "name": "Priya Nair",
+      "age": 22,
+      "photo": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+      "bio": "Economics researcher with a passion for street photography and artisanal bakeries.",
+      "cityOrCollege": "London School of Economics",
+      "interests": [
+        "Economics",
+        "Street Photography",
+        "Croissants",
+        "Modern History"
+      ],
+      "occupation": "Research Analyst",
+      "distanceMiles": 16,
+      "hasLikedUser": true
+    },
+    {
+      "id": "prof_24",
+      "name": "Mateo Rossi",
+      "age": 25,
+      "photo": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80",
+      "bio": "Italian architect working in landscape design. Loves espresso, cycling through old city alleys, and sketching trees.",
+      "cityOrCollege": "Boston, MA",
+      "interests": [
+        "Landscape Architecture",
+        "Espresso",
+        "Cycling",
+        "Sketching"
+      ],
+      "occupation": "Landscape Designer",
+      "distanceMiles": 9,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_25",
+      "name": "Elena Rostova",
+      "age": 23,
+      "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80",
+      "bio": "Classical cellist & aspiring film composer. Can play soundtrack themes by ear.",
+      "cityOrCollege": "Juilliard School",
+      "interests": [
+        "Cello",
+        "Film Scores",
+        "Live Symphony",
+        "Vintage Fashion"
+      ],
+      "occupation": "Cellist",
+      "distanceMiles": 3,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_26",
+      "name": "Samira Khan",
+      "age": 24,
+      "photo": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+      "bio": "Neuroscience PhD student investigating brain plasticity. Incurably curious about consciousness and spicy noodles.",
+      "cityOrCollege": "Johns Hopkins University",
+      "interests": [
+        "Neuroscience",
+        "Ramen",
+        "Sci-Fi Novels",
+        "Stargazing"
+      ],
+      "occupation": "PhD Candidate",
+      "distanceMiles": 6,
+      "hasLikedUser": true
+    },
+    {
+      "id": "prof_27",
+      "name": "Caleb Brooks",
+      "age": 26,
+      "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+      "bio": "Brewmaster at a microbrewery. Passionate about fermentation chemistry, husky dogs, and acoustic blues.",
+      "cityOrCollege": "Asheville, NC",
+      "interests": [
+        "Brewing",
+        "Huskies",
+        "Blues Guitar",
+        "Woodworking"
+      ],
+      "occupation": "Craft Brewer",
+      "distanceMiles": 20,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_28",
+      "name": "Isabella Santos",
+      "age": 21,
+      "photo": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80",
+      "bio": "Film major at USC. Always analyzing cinematographic lighting in normal situations.",
+      "cityOrCollege": "USC School of Cinematic Arts",
+      "interests": [
+        "Cinematography",
+        "35mm Film",
+        "Screenwriting",
+        "Tacos"
+      ],
+      "occupation": "Film Student",
+      "distanceMiles": 4,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_29",
+      "name": "Julian Thorne",
+      "age": 25,
+      "photo": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&q=80",
+      "bio": "Robotics engineer. Built a pancake-flipping robot for fun. Looking for someone who appreciates nerdy humor.",
+      "cityOrCollege": "Carnegie Mellon",
+      "interests": [
+        "Robotics",
+        "3D Printing",
+        "Escape Rooms",
+        "Baking"
+      ],
+      "occupation": "Robotics Engineer",
+      "distanceMiles": 13,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_30",
+      "name": "Aaliyah Patel",
+      "age": 22,
+      "photo": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=800&q=80",
+      "bio": "Graphic designer & ceramics maker. Love wheel throwing, botanical gardens, and discovering hole-in-the-wall diners.",
+      "cityOrCollege": "RISD",
+      "interests": [
+        "Ceramics",
+        "Typography",
+        "Botanical Gardens",
+        "Matcha"
+      ],
+      "occupation": "Visual Designer",
+      "distanceMiles": 5,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_31",
+      "name": "Oliver Davis",
+      "age": 24,
+      "photo": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80",
+      "bio": "Wilderness paramedic and trail runner. Happiest outdoors with a warm thermos of tea.",
+      "cityOrCollege": "Boulder, CO",
+      "interests": [
+        "Trail Running",
+        "First Aid",
+        "Wilderness Survival",
+        "Herbal Tea"
+      ],
+      "occupation": "Flight Paramedic",
+      "distanceMiles": 17,
+      "hasLikedUser": false
+    },
+    {
+      "id": "prof_32",
+      "name": "Hana Sato",
+      "age": 23,
+      "photo": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80",
+      "bio": "Calligrapher and contemporary dancer. Looking for deep conversations about creativity and life.",
+      "cityOrCollege": "Toronto, ON",
+      "interests": [
+        "Calligraphy",
+        "Contemporary Dance",
+        "Tea Ceremonies",
+        "Poetry"
+      ],
+      "occupation": "Artist",
+      "distanceMiles": 15,
+      "hasLikedUser": false
+    }
+  ],
+  "swipes": {},
+  "matches": []
+}
