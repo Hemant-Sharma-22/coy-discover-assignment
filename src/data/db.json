@@ -545,6 +545,22 @@
       "hasLikedUser": false
     }
   ],
-  "swipes": {},
+  "swipes": {
+    "prof_01": {
+      "profileId": "prof_01",
+      "action": "pass",
+      "timestamp": "2026-11-20T17:10:31.875Z"
+    },
+    "prof_02": {
+      "profileId": "prof_02",
+      "action": "pass",
+      "timestamp": "2026-11-20T17:10:59.938Z"
+    },
+    "prof_03": {
+      "profileId": "prof_03",
+      "action": "pass",
+      "timestamp": "2026-11-20T17:11:00.458Z"
+    }
+  },
   "matches": []
 }

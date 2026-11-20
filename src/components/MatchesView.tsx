@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { MatchRecord } from '@/lib/types';
+import { MatchRecord, CurrentUser, DEFAULT_USER } from '@/lib/types';
 import { Heart, MessageCircle, ShieldCheck, Search, X, Send } from 'lucide-react';
 import {
   ChatMessage,
@@ -13,9 +13,14 @@ import {
 interface MatchesViewProps {
   matches: MatchRecord[];
   onGoToDiscover: () => void;
+  currentUser?: CurrentUser;
 }
 
-export const MatchesView: React.FC<MatchesViewProps> = ({ matches, onGoToDiscover }) => {
+export const MatchesView: React.FC<MatchesViewProps> = ({
+  matches,
+  onGoToDiscover,
+  currentUser = DEFAULT_USER,
+}) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedMatch, setSelectedMatch] = useState<MatchRecord | null>(null);
   const [chatHistory, setChatHistory] = useState<Record<string, ChatMessage[]>>({});
@@ -224,7 +229,7 @@ export const MatchesView: React.FC<MatchesViewProps> = ({ matches, onGoToDiscove
                   {lastMsg ? (
                     <p className="text-[10px] text-slate-300 truncate font-normal">
                       <span className="font-semibold text-rose-400">
-                        {lastMsg.sender === 'me' ? 'You: ' : `${record.profile.name.split(' ')[0]}: `}
+                        {lastMsg.sender === 'me' ? `${currentUser.name.split(' ')[0]}: ` : `${record.profile.name.split(' ')[0]}: `}
                       </span>
                       {lastMsg.text}
                     </p>
@@ -275,13 +280,23 @@ export const MatchesView: React.FC<MatchesViewProps> = ({ matches, onGoToDiscove
                   </p>
                 </div>
               </div>
-              <button
-                onClick={() => setSelectedMatch(null)}
-                className="p-1.5 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
-                aria-label="Close conversation"
-              >
-                <X className="w-4 h-4" />
-              </button>
+
+              {/* Close Button & User Identifier */}
+              <div className="flex items-center gap-2">
+                <div className="hidden sm:flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-800/80 border border-slate-700/60 text-[10px] text-slate-300">
+                  <div className="relative w-3.5 h-3.5 rounded-full overflow-hidden">
+                    <Image src={currentUser.photo} alt={currentUser.name} fill className="object-cover" />
+                  </div>
+                  <span>You</span>
+                </div>
+                <button
+                  onClick={() => setSelectedMatch(null)}
+                  className="p-1.5 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+                  aria-label="Close conversation"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
             </div>
 
             {/* Profile Bio & Interests pill strip */}
@@ -320,7 +335,7 @@ export const MatchesView: React.FC<MatchesViewProps> = ({ matches, onGoToDiscove
                   >
                     {/* Other person's avatar next to their incoming messages */}
                     {!isMe && (
-                      <div className="relative w-6 h-6 rounded-full overflow-hidden border border-slate-700 shrink-0 mb-1">
+                      <div className="relative w-6 h-6 rounded-full overflow-hidden border border-slate-700 shrink-0 mb-1 shadow-sm">
                         <Image
                           src={selectedMatch.profile.photo}
                           alt={selectedMatch.profile.name}
@@ -330,7 +345,11 @@ export const MatchesView: React.FC<MatchesViewProps> = ({ matches, onGoToDiscove
                       </div>
                     )}
 
-                    <div className="flex flex-col max-w-[78%]">
+                    <div className={`flex flex-col max-w-[78%] ${isMe ? 'items-end' : 'items-start'}`}>
+                      {/* Name header above bubble */}
+                      <span className="text-[9px] text-slate-400 px-1 mb-0.5 font-medium">
+                        {isMe ? currentUser.name : selectedMatch.profile.name}
+                      </span>
                       <div
                         className={`px-3.5 py-2 text-xs leading-relaxed shadow-md ${
                           isMe
@@ -348,6 +367,18 @@ export const MatchesView: React.FC<MatchesViewProps> = ({ matches, onGoToDiscove
                         {msg.time}
                       </span>
                     </div>
+
+                    {/* Logged in User's avatar next to your sent messages */}
+                    {isMe && (
+                      <div className="relative w-6 h-6 rounded-full overflow-hidden border border-rose-500/60 shrink-0 mb-1 shadow-sm">
+                        <Image
+                          src={currentUser.photo}
+                          alt={currentUser.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    )}
                   </div>
                 );
               })}

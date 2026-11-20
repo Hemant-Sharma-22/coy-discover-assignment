@@ -5,13 +5,14 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, MessageCircle, Sparkles, X } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { Profile } from '@/lib/types';
+import { Profile, CurrentUser, DEFAULT_USER } from '@/lib/types';
 
 interface MatchModalProps {
   matchedProfile: Profile | null;
   isOpen: boolean;
   onClose: () => void;
   onSendMessage: () => void;
+  currentUser?: CurrentUser;
 }
 
 export const MatchModal: React.FC<MatchModalProps> = ({
@@ -19,6 +20,7 @@ export const MatchModal: React.FC<MatchModalProps> = ({
   isOpen,
   onClose,
   onSendMessage,
+  currentUser = DEFAULT_USER,
 }) => {
   useEffect(() => {
     if (isOpen && matchedProfile) {
@@ -86,34 +88,44 @@ export const MatchModal: React.FC<MatchModalProps> = ({
             It&apos;s a Match!
           </h2>
           <p className="text-xs text-slate-300 mb-6">
-            You and <span className="text-rose-400 font-semibold">{matchedProfile.name}</span> have both liked each other on Coy.
+            <span className="text-white font-semibold">{currentUser.name}</span> and{' '}
+            <span className="text-rose-400 font-semibold">{matchedProfile.name}</span> have both liked each other on Coy.
           </p>
 
-          {/* Overlapping Avatars */}
-          <div className="relative flex items-center justify-center h-32 mb-6">
-            {/* Logged in User Avatar */}
-            <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-slate-900 shadow-xl -mr-6 z-10">
-              <Image
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80"
-                alt="You"
-                fill
-                className="object-cover"
-              />
+          {/* Overlapping Avatars with Names */}
+          <div className="flex flex-col items-center mb-6">
+            <div className="relative flex items-center justify-center h-28">
+              {/* Logged in User Avatar */}
+              <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-slate-900 shadow-xl -mr-6 z-10">
+                <Image
+                  src={currentUser.photo}
+                  alt={currentUser.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Pulsing Central Heart Badge */}
+              <div className="z-30 w-10 h-10 rounded-full bg-gradient-to-tr from-rose-500 to-purple-600 flex items-center justify-center shadow-lg shadow-rose-600/40 animate-bounce">
+                <Heart className="w-5 h-5 text-white fill-white" />
+              </div>
+
+              {/* Matched Profile Avatar */}
+              <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-slate-900 shadow-xl -ml-6 z-10">
+                <Image
+                  src={matchedProfile.photo}
+                  alt={matchedProfile.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
 
-            {/* Pulsing Central Heart Badge */}
-            <div className="z-30 w-10 h-10 rounded-full bg-gradient-to-tr from-rose-500 to-purple-600 flex items-center justify-center shadow-lg shadow-rose-600/40 animate-bounce">
-              <Heart className="w-5 h-5 text-white fill-white" />
-            </div>
-
-            {/* Matched Profile Avatar */}
-            <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-slate-900 shadow-xl -ml-6 z-10">
-              <Image
-                src={matchedProfile.photo}
-                alt={matchedProfile.name}
-                fill
-                className="object-cover"
-              />
+            {/* Names Under Avatars */}
+            <div className="flex items-center justify-between w-48 text-center text-xs font-semibold text-slate-300 mt-2">
+              <span className="truncate flex-1 pr-1 text-slate-200">{currentUser.name.split(' ')[0]} (You)</span>
+              <span className="text-rose-500 font-bold">&amp;</span>
+              <span className="truncate flex-1 pl-1 text-rose-400">{matchedProfile.name.split(' ')[0]}</span>
             </div>
           </div>
 

@@ -1,14 +1,16 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { Profile, MatchRecord, SwipeAction } from '@/lib/types';
+import Image from 'next/image';
+import { Profile, MatchRecord, SwipeAction, CurrentUser, DEFAULT_USER } from '@/lib/types';
 import { CardStack } from '@/components/CardStack';
 import { BottomTabBar, TabType } from '@/components/BottomTabBar';
 import { EmptyDeckState } from '@/components/EmptyDeckState';
 import { MatchesView } from '@/components/MatchesView';
 import { HomePlaceholder } from '@/components/HomePlaceholder';
 import { MatchModal } from '@/components/MatchModal';
-import { Heart, RotateCcw, ShieldCheck, Sparkles, Flame } from 'lucide-react';
+import { UserProfileModal } from '@/components/UserProfileModal';
+import { Heart, RotateCcw, ShieldCheck, User } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabType>('discover');
@@ -18,6 +20,29 @@ export default function App() {
   const [isResetting, setIsResetting] = useState(false);
   const [matchedProfile, setMatchedProfile] = useState<Profile | null>(null);
   const [isMatchModalOpen, setIsMatchModalOpen] = useState(false);
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+  const [currentUser, setCurrentUser] = useState<CurrentUser>(DEFAULT_USER);
+
+  // Load saved user profile if available
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('coy_user_profile');
+      if (saved) {
+        setCurrentUser(JSON.parse(saved));
+      }
+    } catch (e) {
+      // ignore
+    }
+  }, []);
+
+  const handleSaveUser = (updated: CurrentUser) => {
+    setCurrentUser(updated);
+    try {
+      localStorage.setItem('coy_user_profile', JSON.stringify(updated));
+    } catch (e) {
+      // ignore
+    }
+  };
 
   // Fetch feed from backend
   const fetchFeed = useCallback(async () => {
@@ -116,6 +141,26 @@ export default function App() {
 
           {/* Header Action Tools */}
           <div className="flex items-center gap-2">
+            {/* User Profile Pill with Photo & Name */}
+            <button
+              onClick={() => setIsProfileModalOpen(true)}
+              className="group flex items-center gap-1.5 px-2 py-1 rounded-full bg-slate-900 border border-slate-800 hover:border-rose-500/50 transition-all text-xs text-slate-200"
+              title="View and edit your profile"
+            >
+              <div className="relative w-5 h-5 rounded-full overflow-hidden border border-rose-500 shadow-sm">
+                <Image
+                  src={currentUser.photo}
+                  alt={currentUser.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <span className="font-semibold text-[11px] group-hover:text-white truncate max-w-[70px]">
+                {currentUser.name.split(' ')[0]}
+              </span>
+            </button>
+
+            {/* Reset Button */}
             <button
               onClick={handleReset}
               disabled={isResetting}
@@ -125,15 +170,6 @@ export default function App() {
               <RotateCcw className={`w-3 h-3 ${isResetting ? 'animate-spin' : ''}`} />
               <span className="hidden sm:inline">Reset</span>
             </button>
-
-            {/* Privacy indicator pill */}
-            <div
-              className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-950/40 border border-emerald-500/30 text-[11px] text-emerald-400 font-medium"
-              title="Double-blind privacy guaranteed"
-            >
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Safe</span>
-            </div>
           </div>
         </div>
       </header>
@@ -141,7 +177,11 @@ export default function App() {
       {/* Main Screen Body */}
       <div className="flex-1 flex flex-col justify-center max-w-md mx-auto w-full pb-20 pt-2 px-3">
         {activeTab === 'home' && (
-          <HomePlaceholder onGoToDiscover={() => setActiveTab('discover')} />
+          <HomePlaceholder
+            onGoToDiscover={() => setActiveTab('discover')}
+            currentUser={currentUser}
+            onEditProfile={() => setIsProfileModalOpen(true)}
+          />
         )}
 
         {activeTab === 'discover' && (
@@ -172,6 +212,7 @@ export default function App() {
           <MatchesView
             matches={matches}
             onGoToDiscover={() => setActiveTab('discover')}
+            currentUser={currentUser}
           />
         )}
       </div>
@@ -180,11 +221,20 @@ export default function App() {
       <MatchModal
         isOpen={isMatchModalOpen}
         matchedProfile={matchedProfile}
+        currentUser={currentUser}
         onClose={() => setIsMatchModalOpen(false)}
         onSendMessage={() => {
           setIsMatchModalOpen(false);
           setActiveTab('matches');
         }}
+      />
+
+      {/* User Profile Customization Modal */}
+      <UserProfileModal
+        user={currentUser}
+        isOpen={isProfileModalOpen}
+        onClose={() => setIsProfileModalOpen(false)}
+        onSave={handleSaveUser}
       />
 
       {/* Mobile-first Bottom Navigation Bar */}
